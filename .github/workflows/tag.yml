@@ -11,5 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
+      - name: Setup Node and run node application
+        uses: actions/setup-node@v3
+      
+      - name: to run read.js
+        run: node read.js
+        
       - name: to fetch tags
         run: git fetch --tags
+        
+      
