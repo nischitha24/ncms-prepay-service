@@ -10,10 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
-      - name: Setup Node and run node application
-        uses: actions/setup-node@v3
-      
+    
       - name: to run read.js
         working-directory: 01_SourceCode
         run: node read.js
