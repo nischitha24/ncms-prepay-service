@@ -18,6 +18,8 @@ jobs:
         working-directory: 01_SourceCode
         run: node read.js
         
+      - run: echo "${{ github.event.action }}"
+        
       - name: to list docker images
         run: docker images
         
