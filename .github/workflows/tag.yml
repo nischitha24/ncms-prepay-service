@@ -1,0 +1,15 @@
+name: trigger action
+on:
+  push:
+     branches:    
+      - main
+     tags:
+     - 'v[0-9]+.[0-9]+.[0-9]+'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: to fetch tags
+        run: git fetch --tags
