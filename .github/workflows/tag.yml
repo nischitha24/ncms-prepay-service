@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-node@v3
       
       - name: to run read.js
-        run: node read.js
+        run: 01_SourceCode/node read.js
         
       - name: to fetch tags
         run: git fetch --tags
