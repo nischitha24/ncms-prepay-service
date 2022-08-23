@@ -18,6 +18,9 @@ jobs:
         working-directory: 01_SourceCode
         run: node read.js
         
+      - name: to list docker images
+        run: docker images
+        
       - name: to fetch tags
         run: git fetch --tags
         
