@@ -1,0 +1,51 @@
+swagger: '2.0'
+info:
+  version: '2.0.0'
+  title: 'Prepay microservices API'
+  description: 'prepay microservices API'
+
+# Added by API Auto Mocking Plugin
+host: cms.numocity.in:8001
+# Added by API Auto Mocking Plugin
+ 
+schemes:
+ - https
+tags:
+- name: prepayEstimation
+  description: Everything about prepayEstimation
+
+paths:
+    /prepayEstimation/calculate:
+        post:
+            tags:
+            - prepayEstimation
+            summary: prepay Estimation
+            consumes:
+            - application/json
+            - application/xml
+            produces:
+            - application/json
+            - application/xml
+            parameters:
+            - in: body
+              name: body
+              description: prepay Estimation
+              required: true
+              schema:
+                $ref: '#/definitions/prepayEstimation'
+            responses:
+              200:
+                description: OK
+              405:
+                description: Invalid input
+        
+definitions:
+    prepayEstimation:
+        type: object
+        properties:
+            amount:
+                type: string
+            discountValue:
+                type: string
+            taxPercentage:
+                type: string

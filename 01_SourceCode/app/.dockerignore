@@ -1,0 +1,5 @@
+# Ingore git folder
+.git
+
+*.md
+test*
