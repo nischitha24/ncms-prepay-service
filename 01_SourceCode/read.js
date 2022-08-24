@@ -8,9 +8,11 @@ try {
     let data = yaml.load(fileContents);
     console.log(data.docker_image.name);
     console.log(data.docker_image.tag);
+    console.log(releasetag[2]);
     const name = data.docker_image.name;
     const tag = data.docker_image.tag;
-    const backupProcess = spawn('docker',['build', '-t', `${name}:${tag}`, `.`
+    const releaseTag = '/'+releasetag[2];
+    const backupProcess = spawn('docker',['build', '-t', `${name+releaseTag}:${tag}`,`.` , 
     ]);
     backupProcess.stdout.on('data', (data) => {
         console.log('stdout:\n', data);
