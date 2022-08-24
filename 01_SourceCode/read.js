@@ -1,8 +1,8 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const { spawn } = require('child_process')
-
-
+var releasetag = process.argv ;
+console.log(releasetag);
 try {
     let fileContents = fs.readFileSync('./build_artifact.yml', 'utf8');
     let data = yaml.load(fileContents);
