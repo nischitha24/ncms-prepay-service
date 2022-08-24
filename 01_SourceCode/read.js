@@ -11,7 +11,7 @@ try {
     console.log(releasetag[2]);
     const name = data.docker_image.name;
     const tag = data.docker_image.tag;
-    const releaseTag = '/'+releasetag[2];
+    const releaseTag = releasetag[2];
     const backupProcess = spawn('docker',['build', '-t', `${name}:${tag+releaseTag}`,`.` , 
     ]);
     backupProcess.stdout.on('data', (data) => {
