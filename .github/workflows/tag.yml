@@ -24,4 +24,7 @@ jobs:
       - name: to fetch tags
         run: git fetch --tags
         
+      - name: to list docker images
+        run: docker images
+        
       
