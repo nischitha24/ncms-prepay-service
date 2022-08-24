@@ -12,12 +12,12 @@ try {
     const name = data.docker_image.name;
     const tag = data.docker_image.tag;
     const releaseTag = '/'+releasetag[2];
-    const backupProcess = spawn('docker',['build', '-t', `${name+releaseTag}:${tag}`,`.` , 
+    const backupProcess = spawn('docker',['build', '-t', `${name}:${tag+releaseTag}`,`.` , 
     ]);
     backupProcess.stdout.on('data', (data) => {
         console.log('stdout:\n', data);
       });
-    backupProcess.on('error', (error) => {
+    backupProcess.stderr.on('data', (error) => {
         console.log('error:\n', error);
       });
   } catch (e) {
