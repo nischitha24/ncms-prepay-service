@@ -13,7 +13,7 @@ jobs:
     
       - name: to run read.js
         working-directory: 01_SourceCode
-        run: node read.js "{{tags}}"
+        run: node read.js "${{ github.ref }}"
 
       - run: |
               echo "${{ github.action }}"
